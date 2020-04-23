@@ -8,5 +8,6 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -o Dpkg::Options::='--force-confnew' 
     chmod 0755 /start.sh && \
     rm -rf /var/lib/apt/lists/*
 
+EXPOSE 3306 4444 4567 4568
 
 CMD ["/start.sh"]
