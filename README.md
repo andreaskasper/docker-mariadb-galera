@@ -11,6 +11,16 @@ MySQL MariaDB with Galera support
 #### run the container
 ```
 docker run \
+    -- name=node1 \
+    --env GALERA_PRIMARY=true \
+    -p 3306:3306 \
+    -p 4444:4444 \
+    -p 4567:4567 \
+    -p 4568:4568 \
+    andreaskasper/mariadb-galera
+
+docker run \
+    -- name=node2 \
     -p 3306:3306 \
     -p 4444:4444 \
     -p 4567:4567 \
@@ -21,6 +31,7 @@ docker run \
 #### Environment Parameters
 | Parameter     | Description   |
 | ------------- |:-------------:|
+| GALERA_PRIMARY | start the first node for the cluster |
 
 
 #### Folders:
